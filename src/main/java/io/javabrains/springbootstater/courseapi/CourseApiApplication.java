@@ -1,10 +1,11 @@
 package io.javabrains.springbootstater.courseapi;
 
 import org.springframework.boot.SpringApplication;
+// import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CourseApiApplication {
+public class CourseApiApplication { 
 
 	public static void main(String[] args) {
 		SpringApplication.run(CourseApiApplication.class, args);

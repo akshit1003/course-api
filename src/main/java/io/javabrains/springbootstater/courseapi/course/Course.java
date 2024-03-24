@@ -1,22 +1,28 @@
-package io.javabrains.springbootstater.courseapi.topics;
+package io.javabrains.springbootstater.courseapi.course;
 
+import io.javabrains.springbootstater.courseapi.topics.Topic;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 // import jakarta.persistence.Table;
+import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Topic {
+public class Course {
 
     @Id
     private String id;
     private String name;
     private String description;
-    public Topic() {
+    @ManyToOne
+    private Topic topic;
+
+    public Course() {
     }
-    public Topic(String id, String name, String description) {
+    public Course(String id, String name, String description, String topicId) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.topic = new Topic(topicId, "", "");
     }
     // @Override
     // public String toString() {
@@ -39,6 +45,14 @@ public class Topic {
     }
     public void setDescription(String description) {
         this.description = description;
+    }
+    
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
     }
 
 }
